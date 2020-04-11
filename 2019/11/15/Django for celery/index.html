@@ -79,14 +79,20 @@
 
 
 
+<meta name="description" content="Django for celeryCeleryCelery有一下5个核心角色 Task 就是任务，有异步任务和定时任务 Broker 中间人，接收生产者发来的消息即Task，将任务存入队列。任务的消费者是Worker。Celery本身不提供队列服务，推荐用Redis或RabbitMQ实现队列服务。 Worker 执行任务的单元，它实时监控消息队列，如果有任务就获取任务并执行它。 Beat 定时任务">
 <meta name="keywords" content="Python,Love,Life">
-<meta property="og:type" content="website">
+<meta property="og:type" content="article">
 <meta property="og:title" content="BestStone">
-<meta property="og:url" content="https://mrstonedb.github.io/beststone.github.io/index.html">
+<meta property="og:url" content="https://mrstonedb.github.io/beststone.github.io/2019/11/15/Django for celery/index.html">
 <meta property="og:site_name" content="BestStone">
+<meta property="og:description" content="Django for celeryCeleryCelery有一下5个核心角色 Task 就是任务，有异步任务和定时任务 Broker 中间人，接收生产者发来的消息即Task，将任务存入队列。任务的消费者是Worker。Celery本身不提供队列服务，推荐用Redis或RabbitMQ实现队列服务。 Worker 执行任务的单元，它实时监控消息队列，如果有任务就获取任务并执行它。 Beat 定时任务">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https:////upload-images.jianshu.io/upload_images/11765489-62c8dd977454ded8?imageMogr2/auto-orient/strip%7CimageView2/2/w/438/format/webp">
+<meta property="og:updated_time" content="2020-04-11T08:00:56.306Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="BestStone">
+<meta name="twitter:description" content="Django for celeryCeleryCelery有一下5个核心角色 Task 就是任务，有异步任务和定时任务 Broker 中间人，接收生产者发来的消息即Task，将任务存入队列。任务的消费者是Worker。Celery本身不提供队列服务，推荐用Redis或RabbitMQ实现队列服务。 Worker 执行任务的单元，它实时监控消息队列，如果有任务就获取任务并执行它。 Beat 定时任务">
+<meta name="twitter:image" content="https:////upload-images.jianshu.io/upload_images/11765489-62c8dd977454ded8?imageMogr2/auto-orient/strip%7CimageView2/2/w/438/format/webp">
 
 
 
@@ -116,13 +122,13 @@
 
 
 
-  <link rel="canonical" href="https://mrstonedb.github.io/beststone.github.io/">
+  <link rel="canonical" href="https://mrstonedb.github.io/beststone.github.io/2019/11/15/Django for celery/">
 
 
 
 
 
-  <title>BestStone</title>
+  <title> | BestStone</title>
   
 
 
@@ -141,8 +147,7 @@
     
   
 
-  <div class="container sidebar-position-left 
-  page-home">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
@@ -265,9 +270,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
 
@@ -297,9 +302,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/11/15/Django for celery/" itemprop="url">未命名</a></h1>
+          <h1 class="post-title" itemprop="name headline"></h1>
         
 
         <div class="post-meta">
@@ -380,10 +383,7 @@
       
 
       
-        
-        
-          
-            <h1 id="Django-for-celery"><a href="#Django-for-celery" class="headerlink" title="Django for celery"></a>Django for celery</h1><h3 id="Celery"><a href="#Celery" class="headerlink" title="Celery"></a>Celery</h3><p>Celery有一下5个核心角色<br> <strong>Task</strong><br> 就是任务，有异步任务和定时任务<br> <strong>Broker</strong><br> 中间人，接收生产者发来的消息即Task，将任务存入队列。任务的消费者是Worker。Celery本身不提供队列服务，推荐用Redis或RabbitMQ实现队列服务。<br> <strong>Worker</strong><br> 执行任务的单元，它实时监控消息队列，如果有任务就获取任务并执行它。<br> <strong>Beat</strong><br> 定时任务调度器，根据配置定时将任务发送给Broler。<br> <strong>Backend</strong><br> 用于存储任务的执行结果。<br> 各个角色间的关系看下面这张图理解一下：</p>
+        <h1 id="Django-for-celery"><a href="#Django-for-celery" class="headerlink" title="Django for celery"></a>Django for celery</h1><h3 id="Celery"><a href="#Celery" class="headerlink" title="Celery"></a>Celery</h3><p>Celery有一下5个核心角色<br> <strong>Task</strong><br> 就是任务，有异步任务和定时任务<br> <strong>Broker</strong><br> 中间人，接收生产者发来的消息即Task，将任务存入队列。任务的消费者是Worker。Celery本身不提供队列服务，推荐用Redis或RabbitMQ实现队列服务。<br> <strong>Worker</strong><br> 执行任务的单元，它实时监控消息队列，如果有任务就获取任务并执行它。<br> <strong>Beat</strong><br> 定时任务调度器，根据配置定时将任务发送给Broler。<br> <strong>Backend</strong><br> 用于存储任务的执行结果。<br> 各个角色间的关系看下面这张图理解一下：</p>
 <p><img src="https:////upload-images.jianshu.io/upload_images/11765489-62c8dd977454ded8?imageMogr2/auto-orient/strip|imageView2/2/w/438/format/webp" alt="img"></p>
 <h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>Celery4.x 开始不再支持Windows平台了。3.1.26是最后目前最新的3.x版本，下面装的是3.1.25。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">pip install celery</span><br><span class="line">pip install celery==3.1.25</span><br></pre></td></tr></table></figure>
@@ -645,8 +645,6 @@
 </tbody>
 </table>
 <h3 id="后台启动"><a href="#后台启动" class="headerlink" title="后台启动"></a>后台启动</h3> <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">celery -A celery_tasks.main worker -l info              # 命令行</span><br><span class="line"></span><br><span class="line">celery multi start w1 -A celery_tasks.main -l info      # 后台</span><br></pre></td></tr></table></figure>
-          
-        
       
     </div>
     
@@ -663,164 +661,28 @@
       
 
       
-
-      
-
       
       
-        <div class="post-eof"></div>
+
       
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://mrstonedb.github.io/beststone.github.io/2018/10/29/My first blog/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="stonedb">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/uploads/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="BestStone">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/10/29/My first blog/" itemprop="url">my_frist_blog</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
             
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-10-29T21:04:08+08:00">
-                2018-10-29
-              </time>
+              <a href="/2018/10/29/My first blog/" rel="next" title="my_frist_blog">
+                <i class="fa fa-chevron-left"></i> my_frist_blog
+              </a>
             
+          </div>
 
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
             
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                    字
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                    分钟
-                </span>
-              
-            </div>
-          
-
-          
-
+          </div>
         </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
       
 
       
-        
-        
-          
-            <h1 id="我的第一篇博客"><a href="#我的第一篇博客" class="headerlink" title="我的第一篇博客"></a>我的第一篇博客</h1><p>生活不可能像你想象得那么好，但也不会像你想象得那么糟。我觉得人的脆弱和坚强都超乎自己的想象。有时，我可能脆弱得一句话就泪流满面，有时，也发现自己咬着牙走了很长的路。——莫泊桑</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </div>
@@ -830,10 +692,11 @@
   </article>
 
 
-    
-  </section>
 
-  
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -841,6 +704,10 @@
 
 
           
+
+  
+
+
 
         </div>
         
@@ -861,8 +728,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
             
@@ -931,6 +807,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Django-for-celery"><span class="nav-number">1.</span> <span class="nav-text">Django for celery</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Celery"><span class="nav-number">1.0.1.</span> <span class="nav-text">Celery</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装"><span class="nav-number">1.1.</span> <span class="nav-text">安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#验证"><span class="nav-number">1.2.</span> <span class="nav-text">验证</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#基本操作"><span class="nav-number">1.3.</span> <span class="nav-text">基本操作</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#创建任务"><span class="nav-number">1.3.1.</span> <span class="nav-text">创建任务</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#启动Worker"><span class="nav-number">1.3.2.</span> <span class="nav-text">启动Worker</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#获取返回结果"><span class="nav-number">1.3.3.</span> <span class="nav-text">获取返回结果</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#其他操作"><span class="nav-number">1.4.</span> <span class="nav-text">其他操作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#小结"><span class="nav-number">1.5.</span> <span class="nav-text">小结</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#后台启动多个Worker"><span class="nav-number">1.6.</span> <span class="nav-text">后台启动多个Worker</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Windows平台不支持"><span class="nav-number">1.7.</span> <span class="nav-text">Windows平台不支持</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#定时任务"><span class="nav-number">1.8.</span> <span class="nav-text">定时任务</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Celery3"><span class="nav-number">1.9.</span> <span class="nav-text">Celery3</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Celery4"><span class="nav-number">1.10.</span> <span class="nav-text">Celery4</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#小结-1"><span class="nav-number">1.11.</span> <span class="nav-text">小结</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#crontab-举例"><span class="nav-number">1.12.</span> <span class="nav-text">crontab 举例</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#日程表（Solar-schedules）"><span class="nav-number">1.13.</span> <span class="nav-text">日程表（Solar schedules）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#后台启动"><span class="nav-number">1.13.1.</span> <span class="nav-text">后台启动</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -1088,6 +980,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
